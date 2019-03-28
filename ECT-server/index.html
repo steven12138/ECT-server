@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>chat room</title>
+	<style type="text/css">
+		.button{
+		    background-color: #4CAF50; /* Green */
+		    border: none;
+		    color: white;
+		    padding: 15px 32px;
+		    text-align: center;
+		    text-decoration: none;
+		    display: inline-block;
+		    border-radius: 12px;
+		    font-size: 16px;
+		    margin: 4px 2px;
+		    cursor: pointer;
+		    -webkit-transition-duration: 0.4s; /* Safari */
+		    transition-duration: 0.4s;
+		}
+
+		.button2:hover {
+    		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+    </style>
+</head>
+<script type="text/javascript">
+	function start()
+	{
+		user=document.getElementById('user').value;
+		window.location.href="/chat?username="+user;
+		//alert(user);
+	}
+</script>
+<body>
+	<input type="text" id='user'>
+	<br>
+	<button onclick=start() class= "button button2"> start to chat </button>
+</body>
+</html>
