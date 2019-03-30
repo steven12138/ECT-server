@@ -1,4 +1,6 @@
 # ECT
 ## erevybody chat toghter
 just a chat room
-I will build it later
+---------------2019-3-30--------------------
+
+# add the msglog function

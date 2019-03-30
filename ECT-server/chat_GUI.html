@@ -110,8 +110,7 @@
   	{
   		str+=list.data[i]['username']+': '+list.data[i]['msg']+'\n';
   	}
-  	var ml=document.getElementById("msglist");
-  	ml.value=str;
+  	put(str,'put');
   });
   function send(){
   	var msg=document.getElementById('input').value;
@@ -119,10 +118,23 @@
   	socket.emit('msg',GetRequest('username'),msg);
   }
   //
-  socket.on('msg',function(user,data){
+  function put(v,op)
+  {
+  	alert();
   	var ml=document.getElementById("msglist");
-  	ml.append(user+': '+data+'\n');
+  	if(op=='append')
+  	{
+  		ml.value+=v;
+  	}
+  	else
+  	{
+  		ml.value=v;
+  	}
   	ml.scrollTop = ml.scrollHeight;
+  }
+
+  socket.on('msg',function(user,data){
+  	put(user+': '+data+'\n','append');
   });
   //
   socket.on('online',function(data){
